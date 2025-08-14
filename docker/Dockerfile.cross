@@ -1,5 +1,6 @@
 FROM ubuntu:20.04 AS rust
 ENV DEBIAN_FRONTEND=noninteractive
+ARG RUST_VERSION=1.88
 COPY docker/lib.sh docker/cross.sh /
 COPY ./ /project
 RUN /cross.sh /project
