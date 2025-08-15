@@ -260,8 +260,7 @@ main() {
         --static \
         ${virtfs} \
         --target-list="${targets}" \
-        # TODO(edera) dirty hack, conflicting `crc32c` defs between libblkid and qemu
-        --extra-ldflags="-Wl,--allow-multiple-definition"
+        --extra-ldflags="-Wl,--allow-multiple-definition" # TODO(edera) dirty hack, conflicting `crc32c` defs between libblkid and qemu
     make "-j$(nproc)"
     make install
 
