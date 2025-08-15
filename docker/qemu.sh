@@ -219,7 +219,7 @@ main() {
     # ubuntu 16.04 only provides python3.5, so remove when we have a newer qemu.
     is_ge_python38=$(python3 -c "import sys; print(int(sys.version_info >= (3, 8)))")
     if [[ "${is_ge_python38}" == "1" ]]; then
-        if_ubuntu version=8.2.2
+        if_ubuntu version=10.0.3
         if_ubuntu install_packages ninja-build meson python3-pip libslirp-dev
         if_ubuntu build_static_slirp
     fi
