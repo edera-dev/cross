@@ -1,0 +1,25 @@
+FROM rust:1.89-alpine@sha256:4b800f2e72e04be908e5f634c504c741bd943b763d1d8ad7b096cc340e1b5b46
+
+RUN apk add \
+    curl \
+    bash \
+    ca-certificates \
+    protoc \
+    clang-static \
+    llvm-static \
+    ncurses-static \
+    zlib-static \
+    zstd-static \
+    clang-dev \
+    llvm-dev \
+    git \
+    cmake \
+    linux-headers \
+    build-base
+
+RUN curl -LO https://github.com/libbpf/bpftool/releases/download/v7.6.0/bpftool-v7.6.0-arm64.tar.gz && \
+    tar -xf bpftool-v7.6.0-arm64.tar.gz && \
+    install ./bpftool /usr/sbin
+
+# Needed or else alpine `libclang` + clang-sys cannot find static zstd
+ENV RUSTFLAGS="-C link-arg=-lzstd"
