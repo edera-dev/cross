@@ -18,7 +18,7 @@ cpp = true
 dylib = true
 std = true
 run = true
-runners = "native qemu-user qemu-system"
+runners = "qemu-user qemu-system"
 deploy = true
 
 [[target]]
@@ -41,13 +41,12 @@ deploy = true
 
 [[target]]
 target = "x86_64-unknown-linux-gnu"
-sub = "centos"
 os = "ubuntu-latest"
 cpp = true
 dylib = true
 std = true
 run = true
-runners = "native qemu-user qemu-system"
+runners = "qemu-user qemu-system"
 
 [[target]]
 target = "aarch64-unknown-linux-gnu"
@@ -635,7 +634,6 @@ special = true
 
 [[target]]
 target = "aarch64-unknown-linux-gnu"
-sub = "centos"
 os = "ubuntu-latest"
 cpp = true
 dylib = true
