@@ -33,6 +33,10 @@ build_static_libmount () {
     if_ubuntu_ge 22.04 version_spec=2.37.2
     if_ubuntu_ge 22.04 version=2.37
 
+    # Ubuntu 24.04 has util-linux 2.39.3
+    if_ubuntu_ge 24.04 version_spec=2.39.3
+    if_ubuntu_ge 24.04 version=2.39
+
     local td
     td="$(mktemp -d)"
 
