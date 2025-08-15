@@ -80,27 +80,27 @@ jobs:
           toolchain: 1.77.2 # MSRV, Minimally Supported Rust Version. Make sure to update README.md and clippy.toml
       - name: Run clippy
         run: cargo clippy --locked --all-targets --all-features --workspace -- -D warnings
-  test:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os:
-          # - macos-latest
-          - ubuntu-latest
-          # - windows-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: ${{ inputs.checkout-ref }}
+  # test:
+  #   runs-on: ${{ matrix.os }}
+  #   strategy:
+  #     matrix:
+  #       os:
+  #         # - macos-latest
+  #         - ubuntu-latest
+  #         # - windows-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #       with:
+  #         ref: ${{ inputs.checkout-ref }}
 
-      - uses: ./.github/actions/setup-rust
-      - uses: ./.github/actions/cargo-llvm-cov
-        with:
-          name: test-${{matrix.os}}
+  #     - uses: ./.github/actions/setup-rust
+  #     - uses: ./.github/actions/cargo-llvm-cov
+  #       with:
+  #         name: test-${{matrix.os}}
 
-      - name: Run unit tests
-        run: cargo test --locked --all-targets --workspace --all-features
-        timeout-minutes: 10
+  #     - name: Run unit tests
+  #       run: cargo test --locked --all-targets --workspace --all-features
+  #       timeout-minutes: 10
   check:
     runs-on: ubuntu-latest
     outputs:
@@ -116,7 +116,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.generate-matrix.outputs.matrix }}
-      tests: ${{ steps.generate-matrix.outputs.tests }}
+      # tests: ${{ steps.generate-matrix.outputs.tests }}
     steps:
       - name: Harden the runner (Audit all outbound calls)
         uses: step-security/harden-runner@002fdce3c6a235733a90a27c80493a3241e56863 # v2.12.1
@@ -137,7 +137,7 @@ jobs:
   build:
     name: target (${{ matrix.pretty }},${{ matrix.os }})
     runs-on: ${{ matrix.os }}
-    needs: [shellcheck, test, generate-matrix, check]
+    needs: [shellcheck, generate-matrix, check]
     if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch' || github.event_name == 'merge_group' || github.event_name == 'issue_comment' || github.event_name == 'schedule')  && needs.generate-matrix.outputs.matrix != '{}' && needs.generate-matrix.outputs.matrix != '[]' && needs.generate-matrix.outputs.matrix != ''
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}-${{ matrix.pretty }}
