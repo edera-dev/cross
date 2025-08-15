@@ -259,7 +259,9 @@ main() {
         --enable-linux-user \
         --static \
         ${virtfs} \
-        --target-list="${targets}"
+        --target-list="${targets}" \
+        # TODO(edera) dirty hack, conflicting `crc32c` defs between libblkid and qemu
+        --extra-ldflags="-Wl,--allow-multiple-definition"
     make "-j$(nproc)"
     make install
 

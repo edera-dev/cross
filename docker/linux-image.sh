@@ -157,7 +157,7 @@ main() {
     x86_64)
         arch=amd64
         kernel="${kversion}-amd64"
-        deps=(libcrypt1:"${arch}")
+        deps=(libcrypt1:"${arch}/bullseye")
         ;;
     *)
         echo "Invalid arch: ${arch}"
@@ -182,7 +182,7 @@ main() {
         local libgcc_root=/qemu/libgcc
         mkdir -p "${libgcc_root}"
         pushd "${libgcc_root}"
-        apt-get -d --no-install-recommends download "${libgcc_packages[@]}"
+        apt-get -d --no-install-recommends --allow-downgrades download "${libgcc_packages[@]}"
         popd
     fi
 
@@ -231,20 +231,26 @@ main() {
     fi
 
     cd "/qemu/${arch}"
-    apt-get -d --no-install-recommends download \
+
+    echo "TESTING"
+    apt-cache policy libc6:amd64
+
+    apt-cache policy libcrypt1:amd64
+
+    apt-get -d --no-install-recommends --allow-downgrades download \
         ${deps[@]+"${deps[@]}"} \
-        "busybox:${arch}" \
-        "${dropbear}:${arch}" \
-        "libtommath1:${arch}" \
-        "libtomcrypt1:${arch}" \
-        "libgmp10:${arch}" \
-        "libc6:${arch}" \
+        "busybox:${arch}/bullseye" \
+        "${dropbear}:${arch}/bullseye" \
+        "libtommath1:${arch}/bullseye" \
+        "libtomcrypt1:${arch}/bullseye" \
+        "libgmp10:${arch}/bullseye" \
+        "libc6:${arch}/bullseye" \
         "linux-image-${kernel}:${arch}" \
-        ncurses-base"${ncurses}" \
-        "zlib1g:${arch}"
+        ncurses-base"${ncurses}/bullseye" \
+        "zlib1g:${arch}/bullseye"
 
     if [[ "${arch}" != "${dpkg_arch}" ]]; then
-        apt-get -d --no-install-recommends download "${libgcc_packages[@]}"
+        apt-get -d --no-install-recommends --allow-downgrades download "${libgcc_packages[@]}"
     else
         # host arch has conflicting versions of the packages installed
         # this prevents us from downloading them, so we need to
@@ -263,7 +269,7 @@ main() {
             version_info=$(apt-cache show "${package}")
             version_record=$(echo "${version_info}" | perl -n00e 'print if /^Maintainer: Debian/m')
             version=$(echo "${version_record}" | grep 'Version: ' | cut -d ' ' -f 2)
-            apt-get -d --no-install-recommends download "${package}=${version}"
+            apt-get -d --no-install-recommends --allow-downgrades download "${package}=${version}"
         done
 
         # now, if we don't remove the system installs, qemu-system won't
@@ -271,7 +277,7 @@ main() {
         # will prefer the system packages, which it can't find later.
         # removing these packages needs to occur after download via apt,
         # since apt-get relies on libgcc_s1 and libstdc++6.
-        dpkg -r --force-depends "${libgcc_packages[@]}"
+        dpkg -r --force-depends --force-remove-protected "${libgcc_packages[@]}"
     fi
     cd /qemu
 
