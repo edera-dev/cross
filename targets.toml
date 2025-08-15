@@ -4,6 +4,8 @@
 # spec is available in `xtask/src/util.rs` on `CiTarget`
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "x86_64-apple-darwin"
 os = "macos-13"
 special = true
@@ -30,6 +32,8 @@ runners = "native qemu-user"
 deploy = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "x86_64-pc-windows-msvc"
 os = "windows-2019"
 special = true
@@ -55,6 +59,8 @@ run = true
 runners = "qemu-user qemu-system"
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "arm-unknown-linux-gnueabi"
 os = "ubuntu-latest"
 cpp = true
@@ -63,6 +69,8 @@ std = true
 run = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "arm-unknown-linux-gnueabihf"
 os = "ubuntu-latest"
 cpp = true
@@ -71,6 +79,8 @@ std = true
 run = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "armv7-unknown-linux-gnueabi"
 os = "ubuntu-latest"
 cpp = true
@@ -80,6 +90,8 @@ run = true
 runners = "qemu-user"
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "armv7-unknown-linux-gnueabihf"
 os = "ubuntu-latest"
 cpp = true
@@ -89,6 +101,8 @@ run = true
 runners = "qemu-user qemu-system"
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "thumbv7neon-unknown-linux-gnueabihf"
 os = "ubuntu-latest"
 cpp = true
@@ -98,6 +112,8 @@ run = true
 runners = "qemu-user qemu-system"
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "i586-unknown-linux-gnu"
 os = "ubuntu-latest"
 cpp = true
@@ -106,6 +122,8 @@ std = true
 run = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "i686-unknown-linux-gnu"
 os = "ubuntu-latest"
 cpp = true
@@ -133,6 +151,8 @@ run = true
 runners = "qemu-user"
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "mips-unknown-linux-gnu"
 os = "ubuntu-latest"
 cpp = true
@@ -143,6 +163,8 @@ runners = "qemu-user"
 build-std = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "mipsel-unknown-linux-gnu"
 os = "ubuntu-latest"
 cpp = true
@@ -153,6 +175,8 @@ runners = "qemu-user qemu-system"
 build-std = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "mips64-unknown-linux-gnuabi64"
 os = "ubuntu-latest"
 cpp = true
@@ -162,6 +186,8 @@ run = true
 build-std = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "mips64el-unknown-linux-gnuabi64"
 os = "ubuntu-latest"
 cpp = true
@@ -192,6 +218,8 @@ run = true
 build-std = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "powerpc-unknown-linux-gnu"
 os = "ubuntu-latest"
 cpp = true
@@ -201,6 +229,8 @@ run = true
 runners = "qemu-user qemu-system"
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "powerpc64-unknown-linux-gnu"
 os = "ubuntu-latest"
 cpp = true
@@ -210,6 +240,8 @@ run = true
 runners = "qemu-user qemu-system"
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "powerpc64le-unknown-linux-gnu"
 os = "ubuntu-latest"
 cpp = true
@@ -237,6 +269,8 @@ run = true
 runners = "qemu-user"
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "s390x-unknown-linux-gnu"
 os = "ubuntu-latest"
 cpp = true
@@ -246,6 +280,8 @@ run = true
 runners = "qemu-user qemu-system"
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "sparc64-unknown-linux-gnu"
 os = "ubuntu-latest"
 cpp = true
@@ -263,6 +299,8 @@ std = true
 run = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "arm-unknown-linux-musleabihf"
 os = "ubuntu-latest"
 cpp = true
@@ -271,6 +309,8 @@ std = true
 run = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "arm-unknown-linux-musleabi"
 os = "ubuntu-latest"
 cpp = true
@@ -279,6 +319,8 @@ std = true
 run = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "armv5te-unknown-linux-gnueabi"
 os = "ubuntu-latest"
 cpp = true
@@ -287,6 +329,8 @@ std = true
 run = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "armv5te-unknown-linux-musleabi"
 os = "ubuntu-latest"
 cpp = true
@@ -295,6 +339,8 @@ std = true
 run = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "armv7-unknown-linux-musleabi"
 os = "ubuntu-latest"
 cpp = true
@@ -303,6 +349,8 @@ std = true
 run = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "armv7-unknown-linux-musleabihf"
 os = "ubuntu-latest"
 cpp = true
@@ -311,6 +359,8 @@ std = true
 run = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "i586-unknown-linux-musl"
 os = "ubuntu-latest"
 cpp = true
@@ -321,6 +371,8 @@ run = true
 runners = "qemu-user"
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "i686-unknown-linux-musl"
 os = "ubuntu-latest"
 cpp = true
@@ -351,6 +403,8 @@ run = true
 build-std = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "aarch64-linux-android"
 os = "ubuntu-latest"
 cpp = true
@@ -359,6 +413,8 @@ std = true
 run = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "arm-linux-androideabi"
 os = "ubuntu-latest"
 cpp = true
@@ -367,6 +423,8 @@ std = true
 run = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "armv7-linux-androideabi"
 os = "ubuntu-latest"
 cpp = true
@@ -375,6 +433,8 @@ std = true
 run = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "thumbv7neon-linux-androideabi"
 os = "ubuntu-latest"
 cpp = true
@@ -382,6 +442,8 @@ std = true
 run = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "i686-linux-android"
 os = "ubuntu-latest"
 cpp = true
@@ -390,6 +452,8 @@ std = true
 run = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "x86_64-linux-android"
 os = "ubuntu-latest"
 cpp = true
@@ -398,6 +462,8 @@ std = true
 run = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "x86_64-pc-windows-gnu"
 os = "ubuntu-latest"
 cpp = true
@@ -405,6 +471,8 @@ std = true
 run = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "i686-pc-windows-gnu"
 os = "ubuntu-latest"
 cpp = true
@@ -421,6 +489,8 @@ std = true
 run = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "wasm32-unknown-emscripten"
 os = "ubuntu-latest"
 cpp = true
@@ -428,6 +498,8 @@ std = true
 run = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "x86_64-unknown-dragonfly"
 os = "ubuntu-latest"
 cpp = true
@@ -436,6 +508,8 @@ std = true
 build-std = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "i686-unknown-freebsd"
 os = "ubuntu-latest"
 cpp = true
@@ -465,6 +539,8 @@ dylib = true
 std = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "sparcv9-sun-solaris"
 os = "ubuntu-latest"
 cpp = true
@@ -472,6 +548,8 @@ dylib = true
 std = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "x86_64-pc-solaris"
 os = "ubuntu-latest"
 cpp = true
@@ -479,6 +557,8 @@ dylib = true
 std = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "x86_64-unknown-illumos"
 os = "ubuntu-latest"
 cpp = true
@@ -486,42 +566,56 @@ dylib = true
 std = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "thumbv6m-none-eabi"
 os = "ubuntu-latest"
 cpp = true
 std = false
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "thumbv7em-none-eabi"
 os = "ubuntu-latest"
 cpp = true
 std = false
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "thumbv7em-none-eabihf"
 os = "ubuntu-latest"
 cpp = true
 std = false
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "thumbv7m-none-eabi"
 os = "ubuntu-latest"
 cpp = true
 std = false
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "thumbv8m.base-none-eabi"
 os = "ubuntu-latest"
 cpp = true
 std = false
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "thumbv8m.main-none-eabi"
 os = "ubuntu-latest"
 cpp = true
 std = false
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "thumbv8m.main-none-eabihf"
 os = "ubuntu-latest"
 cpp = true
@@ -533,6 +627,8 @@ os = "ubuntu-latest"
 special = true
 
 [[target]]
+# TODO(edera) - unused
+disabled = true
 target = "zig"
 os = "ubuntu-latest"
 special = true
