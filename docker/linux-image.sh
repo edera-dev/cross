@@ -59,8 +59,8 @@ main() {
     local arch="${1}" \
         kversion=5.10.0-34
 
-    local debsource="deb http://http.debian.net/debian/ bullseye main"
-    debsource="${debsource}\ndeb http://security.debian.org/ bullseye-security main"
+    local debsource="deb http://http.debian.net/debian/ bookworm main"
+    debsource="${debsource}\ndeb http://security.debian.org/ bookworm-security main"
 
     local dropbear="dropbear-bin"
 
@@ -157,7 +157,7 @@ main() {
     x86_64)
         arch=amd64
         kernel="${kversion}-amd64"
-        deps=(libcrypt1:"${arch}/bullseye")
+        deps=(libcrypt1:"${arch}/bookworm")
         ;;
     *)
         echo "Invalid arch: ${arch}"
@@ -239,15 +239,15 @@ main() {
 
     apt-get -d --no-install-recommends --allow-downgrades download \
         ${deps[@]+"${deps[@]}"} \
-        "busybox:${arch}/bullseye" \
-        "${dropbear}:${arch}/bullseye" \
-        "libtommath1:${arch}/bullseye" \
-        "libtomcrypt1:${arch}/bullseye" \
-        "libgmp10:${arch}/bullseye" \
-        "libc6:${arch}/bullseye" \
+        "busybox:${arch}/bookworm" \
+        "${dropbear}:${arch}/bookworm" \
+        "libtommath1:${arch}/bookworm" \
+        "libtomcrypt1:${arch}/bookworm" \
+        "libgmp10:${arch}/bookworm" \
+        "libc6:${arch}/bookworm" \
         "linux-image-${kernel}:${arch}" \
-        ncurses-base"${ncurses}/bullseye" \
-        "zlib1g:${arch}/bullseye"
+        ncurses-base"${ncurses}/bookworm" \
+        "zlib1g:${arch}/bookworm"
 
     if [[ "${arch}" != "${dpkg_arch}" ]]; then
         apt-get -d --no-install-recommends --allow-downgrades download "${libgcc_packages[@]}"
