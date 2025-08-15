@@ -8,12 +8,12 @@ use clap::Args;
 use cross::shell::MessageInfo;
 use cross::ToUtf8;
 
-const DEFAULT_GCC_VERSION: &str = "8.3.0";
-const DEFAULT_GLIBC_VERSION: &str = "2.17.0";
+const DEFAULT_GCC_VERSION: &str = "13.2.0";
+const DEFAULT_GLIBC_VERSION: &str = "2.39.0";
 const DEFAULT_UCLIBC_VERSION: &str = "1.0.31";
-const DEFAULT_MUSL_VERSION: &str = "1.1.24";
-const DEFAULT_NEWLIB_VERSION: &str = "3.1.0.20181231";
-const DEFAULT_LINUX_VERSION: &str = "4.19.21";
+const DEFAULT_MUSL_VERSION: &str = "1.2.4";
+const DEFAULT_NEWLIB_VERSION: &str = "4.4.0.20231231";
+const DEFAULT_LINUX_VERSION: &str = "6.8.0";
 const DOCKER: &str = "docker";
 const CT_NG: &str = "crosstool-ng";
 const TOOLCHAINS: &str = "cross-toolchains";
