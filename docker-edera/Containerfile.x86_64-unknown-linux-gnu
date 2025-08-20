@@ -5,6 +5,3 @@ RUN apt-get update && apt-get --assume-yes install protobuf-compiler git clang c
 RUN curl -LO https://github.com/libbpf/bpftool/releases/download/v7.6.0/bpftool-v7.6.0-amd64.tar.gz && \
     tar -xf bpftool-v7.6.0-amd64.tar.gz && \
     install ./bpftool /usr/sbin
-
-# Needed or else alpine `libclang` + clang-sys cannot find static zstd
-ENV RUSTFLAGS="-C link-arg=-lzstd"
